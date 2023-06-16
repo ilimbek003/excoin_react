@@ -21,7 +21,7 @@ const Header = () => {
         <div id="header">
             <div className="container">
                 <div className="navbar">
-                    <img src="https://excoin.in/wp-content/uploads/logo.svg" alt=""/>
+                    <img className="logo" src="https://excoin.in/wp-content/uploads/logo.svg" alt=""/>
                     <div className="navbar-nav">
                         <ul className="navbar_ul">
                             <li><a href="#">Главная</a></li>

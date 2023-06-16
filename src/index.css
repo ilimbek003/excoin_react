@@ -18,6 +18,7 @@ li{
 }
 
 .container{
-    width: 1180px;
+    width: 90%;
+    max-width: 1180px;
     margin: 30px auto 40px;
 }
