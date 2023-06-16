@@ -1,6 +1,6 @@
 import React from 'react';
-import './rates.css'
-const Rates = () => {
+import './support.css'
+const Support = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const Rates = () => {
     );
 };
 
-export default Rates;
+export default Support;
