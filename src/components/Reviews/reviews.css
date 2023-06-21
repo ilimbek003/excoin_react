@@ -1,5 +1,6 @@
 .homeobmentable{
     background: #fff;
-    width: 840px;
+    width: 880px;
     min-height: 100vh;
+    border-radius: 4px;
 }

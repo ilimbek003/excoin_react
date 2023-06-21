@@ -1,8 +1,13 @@
 .all_components{
-    width: 23%;
-    display: flex;
-    margin-left: 77%;
-    flex-direction: column;
+    height: 100%;
+    width: 160px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 75.5%;
+    padding-top: 110px;
 }
 
 .black{
