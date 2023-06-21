@@ -8,6 +8,7 @@ import Rates from "../components/rates/Rates"
 import Support from "../components/ Support/Support";
 import Country from "../components/country/country";
 import AllСomponents from "../components/allСomponents/allСomponents";
+import Footer from "../components/Footer/footer";
 const App = () => {
     return (
         <>
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path="/support" element={<Support/>}/>
             </Routes>
             <AllСomponents/>
+            <Footer/>
         </>
     );
 };
