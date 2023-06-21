@@ -8,6 +8,7 @@ body{
     width: 100%;
     height: 100%;
     background: #050C45;
+    /*position: relative;*/
 }
 
 a{
@@ -21,4 +22,11 @@ li{
     width: 95%;
     max-width: 1180px;
     margin: 30px auto 40px;
+}
+
+.homeobmentable{
+    background: #fff;
+    width: 880px;
+    min-height:3272px;
+    border-radius: 4px;
 }

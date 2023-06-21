@@ -4,3 +4,33 @@
     background: #1F2335;
     min-height: 100vh;
 }
+
+.all-footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    padding: 40px 0;
+}
+
+.footer_all-home ul li {
+    padding: 0 0 5px 0;
+}
+.footer_all-home ul li a{
+    color: #FFFFFF;
+    /*font-weight: 100;*/
+}
+.phone-email-tel{
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    margin-bottom: 10px;
+}
+.phone-email-tel a{
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.footer_in p{
+    color: #fff;
+    margin: 33px 0 0;
+}
