@@ -19,14 +19,14 @@ li{
 }
 
 .container{
-    width: 95%;
+    width: 90%;
     max-width: 1180px;
     margin: 30px auto 40px;
 }
 
 .homeobmentable{
     background: #fff;
-    width: 880px;
+    width: 850px;
     min-height:3272px;
     border-radius: 4px;
 }
