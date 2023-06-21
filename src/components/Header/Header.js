@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import "./header.css"
+import {NavLink} from 'react-router-dom'
 
 const Header = () => {
     const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
     const [menu_class, setMenuClass] = useState("menu hidden")
     const [inMenuClicked, setInMenuClicked] = useState(false)
-
+    const [activeLink , setActiveLink] = useState(false)
 
     const updateMenu = () => {
         if (!inMenuClicked) {
@@ -17,19 +18,24 @@ const Header = () => {
         }
         setInMenuClicked(!inMenuClicked)
     }
-    return (
+    // const ClickNavLink = (e) =>{
+    //     if (e.target){
+    //         setActiveLink(true)
+    //     }
+    // }
+     return (
         <div id="header">
             <div className="container">
                 <div className="navbar">
                     <img className="logo" src="https://excoin.in/wp-content/uploads/logo.svg" alt=""/>
                     <div className="navbar-nav">
                         <ul className="navbar_ul">
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">Отзывы</a></li>
-                            <li><a href="#">Правила</a></li>
-                            <li><a href="#">Тарифы</a></li>
-                            <li><a href="#">AML и KYC</a></li>
-                            <li><a href="#">Поддержка</a></li>
+                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink  to="/">Главная</NavLink></li>
+                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink  to="/reviews">Отзывы</NavLink></li>
+                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink  to="/rules">Правила</NavLink></li>
+                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink  to="/rates">Тарифы</NavLink></li>
+                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink  to="/country">AML и KYC</NavLink></li>
+                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink  to="/support">Поддержка</NavLink></li>
                         </ul>
                         <div className="navbar-contact">
                             <img src="https://excoin.in/wp-content/uploads/telegram.svg" alt=""/>

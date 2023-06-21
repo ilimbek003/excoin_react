@@ -3,7 +3,7 @@ import './rates.css'
 const Rates = () => {
     return (
         <div>
-
+             sjfodsg blsg bdlgbdl jlb rfl gbfl gled fvenfp;v af
         </div>
     );
 };

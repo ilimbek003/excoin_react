@@ -3,7 +3,7 @@ import "./rules.css"
 const Rules = () => {
     return (
         <div>
-
+            <h3>sjlvdfdlvdlfvsfdnlgb</h3>
         </div>
     );
 };

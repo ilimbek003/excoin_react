@@ -2,8 +2,12 @@ import React from 'react';
 import "./reviews.css"
 const Reviews = () => {
     return (
-        <div>
-            <h1>hello</h1>
+        <div className="reivews">
+            <div className="container">
+                <div className="homeobmentable">
+
+                </div>
+            </div>
         </div>
     );
 };
