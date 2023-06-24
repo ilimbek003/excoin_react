@@ -7,12 +7,11 @@ import Rules from "../components/Rules/Rules"
 import Rates from "../components/rates/Rates"
 import Support from "../components/ Support/Support";
 import Country from "../components/country/country";
-import AllСomponents from "../components/allСomponents/allСomponents";
 import Footer from "../components/Footer/footer";
+
 const App = () => {
     return (
         <>
-            <Header/>
             <Routes>
                 <Route path="/" element={<AllJs/>}/>
                 <Route path="/reviews" element={<Reviews/>}/>
@@ -21,7 +20,6 @@ const App = () => {
                 <Route path="/country" element={<Country/>}/>
                 <Route path="/support" element={<Support/>}/>
             </Routes>
-            <AllСomponents/>
             <Footer/>
         </>
     );

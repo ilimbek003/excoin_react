@@ -1,10 +1,15 @@
 import React from 'react';
 import './rates.css'
+import Home from "../home/home";
 const Rates = () => {
     return (
-        <div>
-             sjfodsg blsg bdlgbdl jlb rfl gbfl gled fvenfp;v af
-        </div>
+        <>
+            <Home>
+                <div className="homeobmentable">
+
+                </div>
+            </Home>
+        </>
     );
 };
 

@@ -1,11 +1,16 @@
 import React from 'react';
 import './support.css'
+import Home from "../home/home";
 
 const Support = () => {
     return (
-        <div>
-            <h1>Haii</h1>
-        </div>
+        <>
+            <Home>
+                <div className="homeobmentable">
+
+                </div>
+            </Home>
+        </>
     );
 };
 

@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import "./header.css"
 import {NavLink} from 'react-router-dom'
 
-const Header = () => {
+
+const Header = ({children}) => {
     const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
     const [menu_class, setMenuClass] = useState("menu hidden")
     const [inMenuClicked, setInMenuClicked] = useState(false)
@@ -18,11 +19,7 @@ const Header = () => {
         }
         setInMenuClicked(!inMenuClicked)
     }
-    // const ClickNavLink = (e) =>{
-    //     if (e.target){
-    //         setActiveLink(true)
-    //     }
-    // }
+
     return (
         <div id="header">
             <div className="container">
@@ -68,6 +65,27 @@ const Header = () => {
                 </div>
                 <div className={menu_class}>
 
+                </div>
+                <div style={{display: "flex", justifyContent:'space-between',alignItems:'center'}}>
+                    <div>
+                        {children}
+                    </div>
+                    <div>
+                        <div className="all_components">
+                            <div className="black">
+
+                            </div>
+                            <div className="widget">
+
+                            </div>
+                            <div className="widget_news_div">
+
+                            </div>
+                            <div className="lobmen_widget">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,9 +1,14 @@
 import React from 'react';
 import "./rules.css"
+import Home from "../home/home";
 const Rules = () => {
     return (
-        <div>
-            <h3>sjlvdfdlvdlfvsfdnlgb</h3>
+        <div id="rules">
+            <Home>
+                <div className="homeobmentable">
+
+                </div>
+            </Home>
         </div>
     );
 };

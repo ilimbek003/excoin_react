@@ -8,9 +8,7 @@ body{
     width: 100%;
     height: 100%;
     background: #050C45;
-    /*position: relative;*/
 }
-
 a{
     text-decoration: none;
 }
@@ -26,7 +24,10 @@ li{
 
 .homeobmentable{
     background: #fff;
-    width: 850px;
+    width: 830px;
     min-height:3272px;
     border-radius: 4px;
+    /*position: absolute;*/
+    /*top: 100px;*/
 }
+

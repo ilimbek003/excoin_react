@@ -119,6 +119,36 @@
     border: none;
 }
 
+.black{
+    width: 260px;
+    height: 294px;
+    background: #F6F8FA;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.widget{
+    width: 260px;
+    height: 529px;
+    background: #F6F8FA;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.widget_news_div{
+    width: 260px;
+    height: 605px;
+    background: #F6F8FA;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.lobmen_widget{
+    width: 260px;
+    height: 366px;
+    background: #F6F8FA;
+    border-radius: 4px;
+}
 
 @media (max-width: 765px) {
     .navbar{

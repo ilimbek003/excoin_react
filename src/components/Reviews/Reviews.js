@@ -1,13 +1,15 @@
 import React from 'react';
 import "./reviews.css"
+import Home from "../home/home";
+
 const Reviews = () => {
     return (
         <div className="reivews">
-            <div className="container">
+            <Home>
                 <div className="homeobmentable">
 
                 </div>
-            </div>
+            </Home>
         </div>
     );
 };

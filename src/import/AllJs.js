@@ -3,7 +3,7 @@ import Home from "../components/home/home";
 const AllJs = () => {
     return (
         <>
-          <Home/>
+
         </>
     );
 };
