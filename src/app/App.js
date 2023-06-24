@@ -12,6 +12,7 @@ import Footer from "../components/Footer/footer";
 const App = () => {
     return (
         <>
+            <Header/>
             <Routes>
                 <Route path="/" element={<AllJs/>}/>
                 <Route path="/reviews" element={<Reviews/>}/>
