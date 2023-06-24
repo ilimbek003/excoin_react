@@ -5,9 +5,11 @@ import Home from "../home/home";
 const Country = () => {
     return (
         <>
-            <div className="homeobmentable">
-                <h1>jsfvkdkfkvdf</h1>
-            </div>
+            <Home>
+                <div className="homeobmentable">
+
+                </div>
+            </Home>
         </>
     );
 };

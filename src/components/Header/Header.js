@@ -66,7 +66,7 @@ const Header = ({children}) => {
                 <div className={menu_class}>
 
                 </div>
-                <div style={{display: "flex", justifyContent:'space-between',alignItems:'center'}}>
+                <div style={{display: "flex", justifyContent:'space-between'}}>
                     <div>
                         {children}
                     </div>
