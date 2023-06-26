@@ -5,7 +5,7 @@ const AllJs = () => {
     return (
         <>
             <Header>
-                <Home/>
+                {/*<Home/>*/}
             </Header>
         </>
     );

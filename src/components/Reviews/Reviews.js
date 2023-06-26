@@ -1,15 +1,16 @@
 import React from 'react';
 import "./reviews.css"
 import Home from "../home/home";
+import Header from "../Header/Header";
 
 const Reviews = () => {
     return (
         <div className="reivews">
-            <Home>
+            <Header>
                 <div className="homeobmentable">
 
                 </div>
-            </Home>
+            </Header>
         </div>
     );
 };

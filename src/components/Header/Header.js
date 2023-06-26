@@ -50,7 +50,9 @@ const Header = ({children}) => {
                         </div>
                         <div className="navbar-button">
                             <button className="btn">Войти</button>
-                            <button className="btn-one">Регисрация</button>
+                            <NavLink to="/registration">
+                                <button className="btn-one">Регисрация</button>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
@@ -66,7 +68,7 @@ const Header = ({children}) => {
                 <div className={menu_class}>
 
                 </div>
-                <div style={{display: "flex", justifyContent:'space-between'}}>
+                <div style={{display: "flex", justifyContent: 'space-between', marginTop: "40px"}}>
                     <div>
                         {children}
                     </div>
