@@ -75,7 +75,18 @@ const Header = ({children}) => {
                     <div>
                         <div className="all_components">
                             <div className="black">
-
+                                <h1 className="black-authorization">Авторизация</h1>
+                                <form>
+                                    <input type="text"/>
+                                    <input type="password"/>
+                                </form>
+                                <div className="forgot-your-password">
+                                    <a href="#">Забыли пароль?</a>
+                                    <a href="#">Регистрация</a>
+                                </div>
+                                <div className="wlinesubmit-one">
+                                    <input type="submit" formTarget="_top" name="" value="Войти"/>
+                                </div>
                             </div>
                             <div className="widget">
 
