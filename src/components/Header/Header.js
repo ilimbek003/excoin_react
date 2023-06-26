@@ -89,10 +89,128 @@ const Header = ({children}) => {
                                 </div>
                             </div>
                             <div className="widget">
+                                <h1 className="widget-reviews">Отзывы</h1>
+                                <div>
+                                    <div className="flex">
+                                        <h4 className="widget_reviews_author">Владимир,</h4>
+                                        <h6 className="widget_reviews_date">15.02.2022, 15:22</h6>
+                                    </div>
+                                    <p className="widget_reviews_content">Лучший обменник</p>
+                                    <div className="widget_line"/>
+                                </div>
+                                <div>
+                                    <div className="flex">
+                                        <h4 className="widget_reviews_author">Евгений,</h4>
+                                        <h6 className="widget_reviews_date">14.02.2022, 11:24</h6>
+                                    </div>
+                                    <p className="widget_reviews_content">Давно меняю на экскоине и ни разу не
+                                        подводили. Так…</p>
+                                    <div className="widget_line"/>
+                                </div>
+                                <div>
+                                    <div className="flex">
+                                        <h4 className="widget_reviews_author">Дима,</h4>
+                                        <h6 className="widget_reviews_date">11.02.2022, 14:23</h6>
+                                    </div>
+                                    <p className="widget_reviews_content">Спасибо за обмен и хорошую ставку Долго ждать
+                                        подтверждений пришлось…</p>
+                                    <div className="widget_line"/>
+                                </div>
+                                <div>
+                                    <div className="flex">
+                                        <h4 className="widget_reviews_author">Галина,</h4>
+                                        <h6 className="widget_reviews_date">08.02.2022, 15:34</h6>
+                                    </div>
+                                    <p className="widget_reviews_content">Мне все понравилось, надеюсь что бонус
+                                        пришлете:)</p>
+                                    <div className="widget_line"/>
+                                </div>
+                                <div>
+                                    <div className="flex">
+                                        <h4 className="widget_reviews_author">Маша,</h4>
+                                        <h6 className="widget_reviews_date">01.02.2022, 09:48</h6>
+                                    </div>
+                                    <p className="widget_reviews_content">спасибо за хорошую ставку и отдельное спасибо
+                                        менеджеру Владимиру за…</p>
+                                    <div className="widget_line"/>
+                                </div>
+                                <button className="widget-btn">Все отзывы (21)</button>
 
                             </div>
-                            <div className="widget_news_div">
 
+                            <div className="widget_news_div">
+                                <h1 className="widget_news_support">Новости</h1>
+                                <div>
+                                    <div className="flex-one">
+                                        <div className="widget_news_date">
+                                            <div className="wmon">Feb.</div>
+                                            <div className="wdate">14</div>
+                                        </div>
+                                        <div>
+                                            <p className="widget_news_div_text">Криптовалюта в наши <br/> дни является
+                                                одной
+                                                из самых горячих тем…</p>
+                                        </div>
+                                    </div>
+                                    <a className="widget_news_more" href="#">Подробнее</a>
+                                    <div className="widget_line-one"/>
+                                </div>
+                                <div>
+                                    <div className="flex-one">
+                                        <div className="widget_news_date">
+                                            <div className="wmon">Dec.</div>
+                                            <div className="wdate">18</div>
+                                        </div>
+                                        <div>
+                                            <p className="widget_news_div_text">Криптовалюты — это <br/> активы, которые
+                                                не
+                                                представляют никакой <br/> материальной ценности,…</p>
+                                        </div>
+                                    </div>
+                                    <a className="widget_news_more" href="#">Подробнее</a>
+                                    <div className="widget_line-one"/>
+                                </div>
+                                <div>
+                                    <div className="flex-one">
+                                        <div className="widget_news_date">
+                                            <div className="wmon">Nov.</div>
+                                            <div className="wdate">16</div>
+                                        </div>
+                                        <div>
+                                            <p className="widget_news_div_text">На базе первой в <br/> мире цифровой <br/> валюты
+                                                отрабатывались методы, варианты…</p>
+                                        </div>
+                                    </div>
+                                    <a className="widget_news_more" href="#">Подробнее</a>
+                                    <div className="widget_line-one"/>
+                                </div>
+                                <div>
+                                    <div className="flex-one">
+                                        <div className="widget_news_date">
+                                            <div className="wmon">Feb.</div>
+                                            <div className="wdate">12</div>
+                                        </div>
+                                        <div>
+                                            <p className="widget_news_div_text">Добавили новые валюты zcash и риппл на сайт.</p>
+                                        </div>
+                                    </div>
+                                    <a className="widget_news_more" href="#">Подробнее</a>
+                                    <div className="widget_line-one"/>
+                                </div>
+                                <div>
+                                    <div className="flex-one">
+                                        <div className="widget_news_date">
+                                            <div className="wmon">Feb.</div>
+                                            <div className="wdate">12</div>
+                                        </div>
+                                        <div>
+                                            <p className="widget_news_div_text">Мы добавили новые валюты на сайт.</p>
+                                        </div>
+                                    </div>
+                                    <a className="widget_news_more" href="#">Подробнее</a>
+                                    <div className="widget_line-one"/>
+                                </div>
+                                <button className="widget-btn-one">Все новости (6)</button>
                             </div>
                             <div className="lobmen_widget">
 
