@@ -4,11 +4,7 @@ import Home from "../home/home";
 const Rates = () => {
     return (
         <>
-            <Home>
-                <div className="homeobmentable">
 
-                </div>
-            </Home>
         </>
     );
 };
