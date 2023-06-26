@@ -65,7 +65,35 @@ const Registration = () => {
                         <p>Пожалуйста, внимательно и аккуратно заполните все поля регистрационной формы. На указанный
                             вами e-mail будет выслано уведомление о регистрации.</p>
                     </div>
-
+                    <div>
+                        <div className="from-label-input">
+                            <label>Логин <span className="span">*</span>:</label>
+                            <input type="text"/>
+                        </div>
+                        <div className="from-label-input">
+                            <label>E-mail <span className="span">*</span>:</label>
+                            <input type="email"/>
+                        </div>
+                        <div className="from-label-input">
+                            <label>Пароль <span className="span">*</span>:</label>
+                            <input type="password"/>
+                        </div>
+                        <div className="from-label-input">
+                            <label>Пароль снова <span className="span">*</span>:</label>
+                            <input type="password"/>
+                        </div>
+                        <div className="checkbox">
+                            <input type="checkbox" name="rcheck" value="1"/>
+                            <span className="checkbox-span1">С</span>
+                            <a className="checkbox-text" href="https://excoin.in/tos/">правилами сервиса</a>
+                            <span className="checkbox-span">ознакомлен и согласен</span>
+                        </div>
+                        <div>
+                            <input type="submit" formTarget="_top" name="submit" className="reg_submit"
+                                   value="Регистрация"/>
+                            <a className="reg_line_subm_right" href="https://excoin.in/login/">Авторизация</a>
+                        </div>
+                    </div>
                 </div>
             </Header>
         </>
