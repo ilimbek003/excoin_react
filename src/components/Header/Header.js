@@ -66,7 +66,9 @@ const Header = ({children}) => {
                     </nav>
                 </div>
                 <div className={menu_class}>
-
+                    <NavLink to="/registration">
+                        <button className="btn-one">Регисрация</button>
+                    </NavLink>
                 </div>
                 <div style={{display: "flex", justifyContent: 'space-between', marginTop: "40px"}}>
                     <div>
