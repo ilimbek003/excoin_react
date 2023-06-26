@@ -1,0 +1,20 @@
+.all-registration h1{
+    font: 700 15px/26px 'Montserrat', 'Open Sans', sans-serif;
+    color: #2D303B;
+    padding: 30px 0 0 30px ;
+}
+
+.all-registration p {
+    font: 100 14px/26px 'Montserrat', 'Open Sans', sans-serif;
+    padding: 0 0 20px 30px;
+    color: black;
+    opacity: 0.5;
+}
+.all-registration ul{
+    padding: 0 0 20px 40px;
+}
+.all-registration ul li{
+    font: 700 14px/26px 'Montserrat', 'Open Sans', sans-serif;
+    color: #2D303B;
+
+}

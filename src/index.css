@@ -24,8 +24,8 @@ li{
 
 .homeobmentable{
     background: #fff;
-    width: 830px;
-    min-height:3272px;
+    width: 840px;
+    min-height:100vh;
     border-radius: 4px;
     /*position: absolute;*/
     /*top: 100px;*/
