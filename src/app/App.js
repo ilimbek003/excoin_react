@@ -8,6 +8,7 @@ import Country from "../components/country/country";
 import Footer from "../components/Footer/footer";
 import Home from "../components/home/home";
 import Registration from "../components/ registration/registration";
+import ToComeIn from "../components/toComeIn/ToComeIn";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path="/country" element={<Country/>}/>
                 <Route path="/support" element={<Support/>}/>
                 <Route path="/registration" element={<Registration/>}/>
+                <Route path="/toComeIn" element={<ToComeIn/>}/>
             </Routes>
             <Footer/>
         </>

@@ -27,18 +27,43 @@ const Header = ({children}) => {
                     <img className="logo" src="https://excoin.in/wp-content/uploads/logo.svg" alt=""/>
                     <div className="navbar-nav">
                         <ul className="navbar_ul">
-                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink
-                                to="/">Главная</NavLink></li>
-                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink
-                                to="/reviews">Отзывы</NavLink></li>
-                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink
-                                to="/rules">Правила</NavLink></li>
-                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink
-                                to="/rates">Тарифы</NavLink></li>
-                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink to="/country">AML и
-                                KYC</NavLink></li>
-                            <li className={activeLink ? "li_active active" : "li_active"}><NavLink
-                                to="/support">Поддержка</NavLink></li>
+                            <li>
+                                <NavLink
+                                    className={activeLink ? "li_active active" : "li_active"}
+                                    to="/">
+                                    Главная
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    className={activeLink ? "li_active active" : "li_active"}
+                                    to="/reviews">Отзывы
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    className={activeLink ? "li_active active" : "li_active"}
+                                    to="/rules">Правила
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    className={activeLink ? "li_active active" : "li_active"}
+                                    to="/rates">
+                                    Тарифы
+                                </NavLink></li>
+                            <li>
+                                <NavLink
+                                    className={activeLink ? "li_active active" : "li_active"}
+                                    to="/country">AML и KYC
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    className={activeLink ? "li_active active" : "li_active"} to="/support">
+                                    Поддержка
+                                </NavLink>
+                            </li>
                         </ul>
                         <div className="navbar-contact">
                             <img src="https://excoin.in/wp-content/uploads/telegram.svg" alt=""/>
@@ -49,7 +74,9 @@ const Header = ({children}) => {
                             <a href="mailto:support@excoin.in" target="_blank">Email</a>
                         </div>
                         <div className="navbar-button">
-                            <button className="btn">Войти</button>
+                            <NavLink to="/toComeIn">
+                                <button className="btn">Войти</button>
+                            </NavLink>
                             <NavLink to="/registration">
                                 <button className="btn-one">Регисрация</button>
                             </NavLink>
@@ -66,9 +93,9 @@ const Header = ({children}) => {
                     </nav>
                 </div>
                 <div className={menu_class}>
-                    <NavLink to="/registration">
-                        <button className="btn-one">Регисрация</button>
-                    </NavLink>
+                    {/*<NavLink to="/registration">*/}
+                    {/*    <button className="btn-one">Регисрация</button>*/}
+                    {/*</NavLink>*/}
                 </div>
                 <div style={{display: "flex", justifyContent: 'space-between', marginTop: "40px"}}>
                     <div>

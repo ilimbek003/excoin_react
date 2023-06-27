@@ -1,0 +1,72 @@
+.titlepage{
+    font: 700 16px/26px 'Montserrat', 'Open Sans', sans-serif;
+    color: #2D303B;
+    padding: 30px 0 5px 0;
+}
+
+.come h2{
+    font: 600 16px 'Open Sans';
+    color: #248BC6;
+    margin: 0 0 10px 0;
+}
+
+.come p{
+    font: 13px/1.5em 'Montserrat', 'Open Sans', sans-serif;
+    color: #59788C;
+    margin: 0 0 20px 0;
+}
+
+.come_pro{
+    padding: 30px 0 20px 0;
+}
+
+.come-label{
+    font: 700 16px 'Montserrat', 'Open Sans', sans-serif;
+    color: #59788C;
+    margin: 0 0 5px 0;
+}
+
+.come-span{
+    color: red;
+}
+
+.form_field_ins input{
+    border: none;
+    background: #fff;
+    color: #59788C;
+    border-radius: 4px;
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.17);
+    height: 50px;
+    width: 50%;
+    padding: 0 10px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font: 13px/40px 'Montserrat', 'Open Sans', sans-serif;
+    margin: 0 0 30px 0;
+    outline: 1px solid #5EC983;
+}
+
+.log_line_subm_left{
+    display: flex;
+    margin-left: -23px;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.log_line_subm_right_pro {
+    margin-left: 20px;
+    padding: 35px 0 0 0;
+}
+.log_line_subm_right_pro a{
+    font: 13px/1.5em 'Montserrat', 'Open Sans', sans-serif;
+    color: #59788C;
+}
+
+.log_line_subm_right_pro a:hover{
+    text-decoration: underline;
+}

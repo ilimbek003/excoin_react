@@ -85,6 +85,16 @@
     font-size: 14px;
     line-height: 36px;
     color: #FFFFFF;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn::before{
+    display: none;
+}
+
+.btn:hover{
+    background: #2E3C8F;
 }
 
 .btn-one{
@@ -114,7 +124,7 @@
 
 .black-authorization{
     font: 700 16px/17px 'Montserrat', 'Open Sans', sans-serif;
-    padding: 20px 0 16px 27px;
+    padding: 20px 0 16px 26px;
 }
 
 .black input{
@@ -135,7 +145,8 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     font: 13px/40px 'Montserrat', 'Open Sans', sans-serif;
-    margin: 0 0 20px 27px;
+    margin: 0 0 20px 25.5px;
+    padding: 0 0 0 10px;
 }
 
 .forgot-your-password a{

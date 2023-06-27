@@ -89,7 +89,7 @@ const Registration = () => {
                             <span className="checkbox-span">ознакомлен и согласен</span>
                         </div>
                         <div>
-                            <input type="submit" formTarget="_top" name="submit" className="reg_submit"
+                            <input type="submit" formTarget="_top" name="submit" className="reg_submit-two"
                                    value="Регистрация"/>
                             <a className="reg_line_subm_right" href="https://excoin.in/login/">Авторизация</a>
                         </div>
