@@ -1,0 +1,24 @@
+.title_page {
+    font: 700 16px/26px 'Montserrat', 'Open Sans', sans-serif;
+    color: #2D303B;
+    padding-top: 20px;
+}
+
+.text-p p{
+    font: 14px/1.5em 'Montserrat', 'Open Sans', sans-serif;
+    color: #59788C;
+    padding: 0 0 20px 0;
+}
+.form_field_label_ins{
+    font: 700 16px 'Montserrat', 'Open Sans', sans-serif;
+    color: #59788C;
+    padding: 0 0 20px 0;
+}
+
+.req{
+    color: red;
+}
+
+.has_submit{
+    margin-left: -26px;
+}
