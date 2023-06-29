@@ -1,0 +1,122 @@
+.form_filed_Name {
+    border: 0;
+    font-family: inherit;
+    font-size: 24px;
+    font-style: inherit;
+    color: #59788c;
+    margin-bottom: 20px;
+    margin-top: 9px;
+  }
+  .form_filed_Name input:focus{
+    border-color:  rgb(37, 241, 37);
+  }
+  .form_filed_Name input {
+    border: none;
+    background: #fff;
+    color: #59788c;
+    border: 1px solid #DEE6EB;;
+    border-radius: 4px;
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.17);
+    height: 50px;
+    width: 50%;
+    outline: none;
+    padding: 0 10px;
+    transition: all 0.3s linear;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font: 13px/40px "Montserrat", "Open Sans", sans-serif;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    /* padding: 0 0 24px 0 ; */
+    margin: 3px 0 0 20px;
+  }
+  .form_filed_Name span {
+    color: #ff7f66;
+  }
+  
+  .otz {
+    font: 700 14px/26px "Montserrat", "Open Sans", sans-serif;
+    color: #2d303b;
+    font-weight: 900;
+  
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .form_filed_Name h6 {
+    padding: 0 0 0 20px;
+  }
+  
+  .form_filed_ins h1 {
+    padding: 15px 0 0 20px;
+  }
+
+  #form_field_id:focus{
+    border-color: rgb(37, 241, 37);
+  }
+  
+  #form_field_id {
+    font: 13px "Montserrat", "Open Sans", sans-serif;
+    background: #fff;
+    color: #59788c;
+    border: 1px solid #DEE6EB;;
+    border-radius: 4px;
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.17);
+    width: 94%;
+    max-width: 94%;
+    min-width: 94%;
+    height: 150px;
+    min-height: 150px;
+    padding: 15px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-left: 20px;
+    
+    
+  }
+  
+  .form_label {
+    color: #59788c;
+    font-size: 16px;
+    font-weight: bolder;
+  margin-left:20px ;
+  }
+  
+
+  /* .oneotziv {
+    color: #59788C;
+    padding: 15px 0 0 0;
+    justify-content: space-around;
+    align-items: center;
+}
+.oneotzivright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -243px;
+    padding-top: -40px;
+}
+
+.oneotdata{
+  margin-top: 30px ;
+}
+
+
+.oneotdata_two{
+
+} */
+
+.oneotziv {
+  display: flex;
+  color: #59788C;
+  font-size: 14px;
+  padding: 15px 0 0 0;
+  justify-content: space-around;
+  align-items: center;
+  margin: 11px 436px 0 0 ;
+}
