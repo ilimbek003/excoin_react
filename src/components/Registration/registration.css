@@ -123,8 +123,7 @@ input[type=submit] {
     background: linear-gradient(270deg, #ACFFC9 0%, #5EC983 100%);
     border-radius: 4px;
     height: 40px;
-    font: 700 14px/40px 'Montserrat', 'Open Sans', serif;
-     text-transform: uppercase;
+    font: 900 14px/40px 'Montserrat', 'Open Sans', serif;
     color: #2D303B;
     padding: 0 30px;
     cursor: pointer;

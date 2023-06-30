@@ -4,15 +4,17 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family:MontserratAlternates ;
-    src: url("./fonts/Montserrat-ExtraLightItalic.ttf");
+@font-face{
+    font-family: "Montserrat" ;
+    src: url("./fonts/static/Montserrat-Regular.ttf");
 }
 
 body{
     width: 100%;
     height: 100%;
-    background: #050C45;
+    background: linear-gradient(180deg, #10185D 0%, #2E3C8F 100%);
+  font-family:Montserrat-Regular ;
+
 }
 a{
     text-decoration: none;

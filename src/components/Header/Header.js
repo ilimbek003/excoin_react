@@ -78,7 +78,7 @@ const Header = ({children}) => {
                                 <button className="btn">Войти</button>
                             </NavLink>
                             <NavLink to="/registration">
-                                <button className="btn-one">Регисрация</button>
+                                <button className="btn-one">Регистрация</button>
                             </NavLink>
                         </div>
                     </div>

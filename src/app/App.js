@@ -13,7 +13,7 @@ import ToComeIn from "../components/ToComeIn/ToComeIn";
 const App = () => {
     return (
         <>
-            {/*<Header/>*/}
+    
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/reviews" element={<Reviews/>}/>
