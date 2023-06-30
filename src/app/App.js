@@ -2,13 +2,13 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import Reviews from "../components/Reviews/Reviews"
 import Rules from "../components/Rules/Rules"
-import Rates from "../components/rates/Rates"
+import Rates from "../components/Rates/Rates"
 import Support from "../components/ Support/Support";
-import Country from "../components/country/country";
-import Footer from "../components/Footer/footer";
-import Home from "../components/home/home";
-import Registration from "../components/ registration/registration";
-import ToComeIn from "../components/toComeIn/ToComeIn";
+import Country from "../components/Country/Country";
+import Footer from "../components/Footer/Footer";
+import Home from "../components/Home/Home";
+import Registration from "../components/Registration/Registration";
+import ToComeIn from "../components/ToComeIn/ToComeIn";
 
 const App = () => {
     return (
