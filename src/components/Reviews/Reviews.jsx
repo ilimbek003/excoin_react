@@ -1,6 +1,6 @@
 import React from "react";
 import "./reviews.css";
-import Home from "../home/home";
+import Home from "../Home/Home";
 import Header from "../Header/Header";
 
 const Reviews = () => {
