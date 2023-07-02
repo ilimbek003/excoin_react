@@ -22,3 +22,26 @@
 .has_submit{
     margin-left: -26px;
 }
+.cf_textarea{
+    font: 13px "Montserrat", "Open Sans", sans-serif;
+    background: #fff;
+    color: #59788c;
+    border: 1px solid #DEE6EB;;
+    border-radius: 4px;
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.17);
+    width: 94%;
+    max-width: 96%;
+    min-width: 94%;
+    height: 150px;
+    min-height: 150px;
+    padding: 15px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-left: 1px;
+    
+}

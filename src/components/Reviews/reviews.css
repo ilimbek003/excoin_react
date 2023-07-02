@@ -63,7 +63,7 @@
     border-radius: 4px;
     box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.17);
     width: 94%;
-    max-width: 94%;
+    max-width: 96%;
     min-width: 94%;
     height: 150px;
     min-height: 150px;
@@ -88,35 +88,47 @@
   }
   
 
-  /* .oneotziv {
-    color: #59788C;
-    padding: 15px 0 0 0;
-    justify-content: space-around;
-    align-items: center;
-}
-.oneotzivright{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: -243px;
-    padding-top: -40px;
-}
-
-.oneotdata{
-  margin-top: 30px ;
-}
-
-
-.oneotdata_two{
-
-} */
 
 .oneotziv {
   display: flex;
   color: #59788C;
-  font-size: 14px;
+  font-size: 16px;
   padding: 15px 0 0 0;
   justify-content: space-around;
   align-items: center;
-  margin: 11px 436px 0 0 ;
+  margin: 30px 436px 0 3px;
+
+}
+.oneot{
+  height: 0.4px;
+  width: 96%;
+  text-decoration: underline;
+  background-color: #DEE6EB;
+  margin: 14px 0 0 20px ;
+}
+.oneotzivright{
+margin-top: -10px;
+}
+.oneotname{
+  padding: 3px;
+}
+
+.oneotziv_two{
+  display: flex;
+  color: #59788C;
+  font-size: 16px;
+  padding: 15px 0 0 0;
+  align-items: center;
+  margin-left: 27px;
+}
+
+.oneotzivright_one {
+  color: #59788C;
+  font-size: 16px;
+  padding: -25px 0 0 0;
+  margin: 0 0 0 20px;
+}
+
+.oneotzivright_two-three{
+  margin: -4px 0 0 44px;
 }
