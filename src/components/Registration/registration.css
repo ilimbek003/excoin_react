@@ -140,3 +140,7 @@ input[type=submit] {
 .reg_line_subm_right_one{
     padding-bottom: 60px;
 }
+
+.all-submit{
+    margin-left: -2px;
+}

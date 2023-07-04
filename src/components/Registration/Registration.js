@@ -138,18 +138,7 @@ const Registration = () => {
                             <a className="checkbox-text" href="https://excoin.in/tos/">правилами сервиса</a>
                             <span className="checkbox-span">ознакомлен и согласен</span>
                         </div>
-                        <div className='reg_line_subm_right_one'>
-
-                            <input type="submit" formTarget="_top" name="submit" className="reg_submit-two"
-                                   value="Регистрация"/>
-
-                                
-
-                        </div>
-
-                        <div>
-                            <button onClick={handleSubmit}>Регистрация</button>
-
+                        <div className="all-submit">
                             <input
                                 onClick={handleSubmit}
                                 type="submit" formTarget="_top" name="submit" className="reg_submit-two"
