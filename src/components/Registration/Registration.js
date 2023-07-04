@@ -137,7 +137,11 @@ const Registration = () => {
                         <div className='reg_line_subm_right_one'>
                             <input type="submit" formTarget="_top" name="submit" className="reg_submit-two"
                                    value="Регистрация"/>
+<<<<<<< HEAD
                                    </div>
+=======
+                        </div>
+>>>>>>> 58f44e1d2c39d4fcfbce88bf28a1129965512929
 
                         <div>
                             <button onClick={handleSubmit}>Регистрация</button>
