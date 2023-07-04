@@ -1,0 +1,40 @@
+.thecontent h1{
+    font: 700 14px/26px 'Montserrat', 'Open Sans', sans-serif;
+    color: #0a0c0f;  
+    font-weight: bold;
+    
+}
+
+
+    .text_p{
+        font: 13px/1.5em 'Montserrat', 'Open Sans', sans-serif;
+        color: #59788C;
+    
+    }
+  .gamblind p{
+    color: #59788C;
+    padding: 20px 0 0 0 ;
+    font: 13px/1.5em 'Montserrat', 'Open Sans', sans-serif;
+
+  }
+
+
+  .gamblind_two{
+    color: #59788C;
+    padding: 20px 0 0 0 ;
+    font: 13px/1.5em 'Montserrat', 'Open Sans', sans-serif;
+
+  }
+  .gamblind_three{
+    color: #59788C;
+    padding: 20px 0 0 0 ;
+    font: 13px/1.5em 'Montserrat', 'Open Sans', sans-serif;
+
+  }
+  .gamblind_a{
+    color: #59788C;
+  }
+
+  .pros{
+    padding-bottom: 40px;
+  }
