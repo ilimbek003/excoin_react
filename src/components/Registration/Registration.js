@@ -8,23 +8,23 @@ const Registration = () => {
 
     const [inputData, setInputData] = useState(
         {
-            email: "",
-            username: "",
-            password: "",
-            password2: ""
+            "email": "",
+            "username": "",
+            "password": "",
+            "password2": ""
         }
     )
 
-    const handeData = (e) =>{
-        setInputData({...inputData, [e.target.name]:e.target.value})
-    }
+    console.log(inputData)
 
-    const handleSubmit = (e) =>{
-       e.preventDefault()
-        axios.post("https://excoin.onrender.com/account/register/", {inputData})
-            .then((res) =>{
-                console.log(res)})
-            .catch((err) =>{
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('https://excoin.onrender.com/account/register/', inputData)
+            .then((res) => {
+                    console.log(res)
+                })
+            .catch((err) => {
                 console.log(err)
             })
     }
@@ -96,14 +96,16 @@ const Registration = () => {
                             <input
                                 type="text"
                                 value={inputData.username}
-                                onChange={handeData}
+                                onChange={
+                                (e) => setInputData({ ...inputData, username: e.target.value })}
                                 name="username"
                             />
                         </div>
                         <div className="from-label-input">
                             <label>E-mail <span className="span">*</span>:</label>
                             <input
-                                onChange={handeData}
+                                onChange={
+                                    (e) => setInputData({ ...inputData, email: e.target.value })}
                                 value={inputData.email}
                                 type="email"
                                 name="email"
@@ -112,7 +114,8 @@ const Registration = () => {
                         <div className="from-label-input">
                             <label>Пароль <span className="span">*</span>:</label>
                             <input
-                                onChange={handeData}
+                                onChange={
+                                    (e) => setInputData({ ...inputData, password: e.target.value })}
                                 value={inputData.password}
                                 type="password"
                             />
@@ -120,10 +123,11 @@ const Registration = () => {
                         <div className="from-label-input">
                             <label>Пароль снова <span className="span">*</span>:</label>
                             <input
-                                onChange={handeData}
+                                onChange={
+                                    (e) => setInputData({ ...inputData, password2: e.target.value })}
                                 value={inputData.password2}
                                 type="password"
-                                name="password"
+                                name="password2"
                             />
                         </div>
                         <div className="checkbox">
@@ -135,24 +139,18 @@ const Registration = () => {
                             <span className="checkbox-span">ознакомлен и согласен</span>
                         </div>
                         <div className='reg_line_subm_right_one'>
-                            <input type="submit" formTarget="_top" name="submit" className="reg_submit-two"
-                                   value="Регистрация"/>
-<<<<<<< HEAD
-                                   </div>
-=======
-                        </div>
->>>>>>> 58f44e1d2c39d4fcfbce88bf28a1129965512929
-
-                        <div>
-                            <button onClick={handleSubmit}>Регистрация</button>
+                            <input
+                                onClick={handleSubmit}
+                                type="submit" formTarget="_top" name="submit" className="reg_submit-two"
+                                value="Регистрация"/>
                             <a className="reg_line_subm_right" href="https://excoin.in/login/">Авторизация</a>
                         </div>
                     </form>
-                                 
-                     </div>
+                </div>
             </Header>
         </>
-    );
+    )
+        ;
 };
 
 export default Registration;
