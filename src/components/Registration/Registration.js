@@ -1,8 +1,33 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./registration.css"
 import Header from "../Header/Header";
+import axios from "axios"
+
 
 const Registration = () => {
+
+    const [inputData, setInputData] = useState(
+        {
+            email: "",
+            username: "",
+            password: "",
+            password2: ""
+        }
+    )
+
+    const handeData = (e) =>{
+        setInputData({...inputData, [e.target.name]:e.target.value})
+    }
+
+    const handleSubmit = (e) =>{
+       e.preventDefault()
+        axios.post("https://excoin.onrender.com/account/register/", {inputData})
+            .then((res) =>{
+                console.log(res)})
+            .catch((err) =>{
+                console.log(err)
+            })
+    }
     return (
         <>
             <Header>
@@ -47,7 +72,7 @@ const Registration = () => {
                             <li>> на сайтах, распространяющих любые материалы, прямо или косвенно нарушающие
                                 законодательство РФ;
                             </li>
-                            <li>> на сайтах, публикующих списки сайтов с «бесплатными бонусами»;</li>
+                            <li> на сайтах, публикующих списки сайтов с «бесплатными бонусами»;</li>
                             <li>> на веб-страницах, закрытых от публичного просмотра с помощью авторизации (различные
                                 социальные сети, закрытые разделы форумов и т.п.).
                             </li>
@@ -65,25 +90,46 @@ const Registration = () => {
                         <p>Пожалуйста, внимательно и аккуратно заполните все поля регистрационной формы. На указанный
                             вами e-mail будет выслано уведомление о регистрации.</p>
                     </div>
-                    <div>
+                    <form onSubmit={handleSubmit}>
                         <div className="from-label-input">
                             <label>Логин <span className="span">*</span>:</label>
-                            <input type="text"/>
+                            <input
+                                type="text"
+                                value={inputData.username}
+                                onChange={handeData}
+                                name="username"
+                            />
                         </div>
                         <div className="from-label-input">
                             <label>E-mail <span className="span">*</span>:</label>
-                            <input type="email"/>
+                            <input
+                                onChange={handeData}
+                                value={inputData.email}
+                                type="email"
+                                name="email"
+                            />
                         </div>
                         <div className="from-label-input">
                             <label>Пароль <span className="span">*</span>:</label>
-                            <input type="password"/>
+                            <input
+                                onChange={handeData}
+                                value={inputData.password}
+                                type="password"
+                            />
                         </div>
                         <div className="from-label-input">
                             <label>Пароль снова <span className="span">*</span>:</label>
-                            <input type="password"/>
+                            <input
+                                onChange={handeData}
+                                value={inputData.password2}
+                                type="password"
+                                name="password"
+                            />
                         </div>
                         <div className="checkbox">
-                            <input type="checkbox" name="rcheck" value="1"/>
+                            <input
+                                type="checkbox"
+                            />
                             <span className="checkbox-span1">С</span>
                             <a className="checkbox-text" href="https://excoin.in/tos/">правилами сервиса</a>
                             <span className="checkbox-span">ознакомлен и согласен</span>
@@ -91,10 +137,14 @@ const Registration = () => {
                         <div className='reg_line_subm_right_one'>
                             <input type="submit" formTarget="_top" name="submit" className="reg_submit-two"
                                    value="Регистрация"/>
+
+                        <div>
+                            <button onClick={handleSubmit}>Регистрация</button>
                             <a className="reg_line_subm_right" href="https://excoin.in/login/">Авторизация</a>
                         </div>
-                    </div>
-                </div>
+                    </form>
+                                 
+                     </div>
             </Header>
         </>
     );
