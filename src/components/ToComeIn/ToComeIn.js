@@ -1,8 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./toComeIn.css"
 import Header from "../Header/Header";
+import axios from "axios";
 
 const ToComeIn = () => {
+    const [inputData, setInputData] = useState(
+        {
+            "email": "",
+            "password": "",
+        }
+    )
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('https://excoin.onrender.com/account/login/', inputData)
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+
     return (
         <>
             <Header>
@@ -29,11 +49,18 @@ const ToComeIn = () => {
                         <p>Если вы уже являетесь зарегистрированным пользователем нашего сайта, выполните вход,
                             используя следующую форму авторизации:</p>
                         <div>
+
                             <div>
                                 <label className="come-label">Логин или e-mail <span
                                     className="come-span">*</span>:</label>
                                 <div className="form_field_ins">
-                                    <input type="text" id="form_field_id-1-logmail" name="logmail"/>
+                                    <input
+                                        value={inputData.email}
+                                        onChange={
+                                            (e) => setInputData({ ...inputData, email: e.target.value })}
+                                        type="text"
+                                        id="form_field_id-1-logmail"
+                                        name="logmail"/>
                                     <div className="form_field_errors">
                                         <div className="form_field_errors_ins"></div>
                                     </div>
@@ -42,7 +69,12 @@ const ToComeIn = () => {
                             <div>
                                 <label className="come-label">Пароль<span className="come-span">*</span>:</label>
                                 <div className="form_field_ins">
-                                    <input type="password" id="form_field_id-1-logmail" name="logmail"/>
+                                    <input
+                                        onChange={
+                                            (e) => setInputData({ ...inputData, password: e.target.value })}
+                                        value={inputData.password}
+                                        type="password"
+                                    />
                                     <div className="form_field_errors">
                                         <div className="form_field_errors_ins"></div>
                                     </div>
@@ -50,7 +82,9 @@ const ToComeIn = () => {
                             </div>
                             <div className="log_line_subm_left">
                                 <div>
-                                    <input type="submit" formTarget="_top" name="submit" className="log_submit-one"
+                                    <input
+                                        onClick={handleSubmit}
+                                        type="submit" formTarget="_top" name="submit" className="log_submit-one"
                                            value="Войти"/>
                                 </div>
                                 <div className="log_line_subm_right_pro">
