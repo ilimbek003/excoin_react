@@ -7,7 +7,7 @@ const Reviews = () => {
   return (
     <div className="reivews">
       <Header>
-        <div className="homeobmentable">
+        <div className="homeobmentable-revers">
           <div>
             <div className="form_filed_ins">
               <h1 className="otz">Отзывы</h1>
