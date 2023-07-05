@@ -49,6 +49,7 @@ const Registration = () => {
         axios.post('https://excoin.onrender.com/account/register/', inputData)
             .then((res) => {
                 console.log(res)
+
             })
             .catch((err) => {
                 console.log(err)
