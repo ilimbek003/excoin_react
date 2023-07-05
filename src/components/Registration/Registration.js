@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import axios from "axios"
 
 
+
 const Registration = () => {
 
     const [inputData, setInputData] = useState(
@@ -11,19 +12,44 @@ const Registration = () => {
             "email": "",
             "username": "",
             "password": "",
-            "password2": ""
+            "password2": "",
+            "redirect_url": "https://excoin.in/lostpass /"
         }
     )
 
+    const [errors, setErrors] = useState({})
+
     console.log(inputData)
+   function validation (inputData){
+        const errors ={}
+
+        const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
+        const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
 
 
+        if (inputData.username === ""){
+            errors.username = "Name is Required"
+        }
+        if (inputData.email === ""){
+            errors.email = "email is Required"
+        }
+        else if(!email_pattern.test(inputData.email)){
+            errors.email = "Email did'nt match "
+        }
+        if (inputData.password === ""){
+            errors.password = "password is Required"
+        }else if(!password_pattern.test(inputData.password)){
+            errors.password = "password did'nt match"
+        }
+        return errors
+    }
     const handleSubmit = (e) => {
         e.preventDefault()
+        setErrors(validation(inputData))
         axios.post('https://excoin.onrender.com/account/register/', inputData)
             .then((res) => {
-                    console.log(res)
-                })
+                console.log(res)
+            })
             .catch((err) => {
                 console.log(err)
             })
@@ -94,37 +120,41 @@ const Registration = () => {
                         <div className="from-label-input">
                             <label>Логин <span className="span">*</span>:</label>
                             <input
+
                                 type="text"
                                 value={inputData.username}
                                 onChange={
-                                (e) => setInputData({ ...inputData, username: e.target.value })}
+                                    (e) => setInputData({...inputData, username: e.target.value})}
                                 name="username"
                             />
+                            {errors.username && <p style={{color:"red"}}>{errors.username}</p>}
                         </div>
                         <div className="from-label-input">
                             <label>E-mail <span className="span">*</span>:</label>
                             <input
                                 onChange={
-                                    (e) => setInputData({ ...inputData, email: e.target.value })}
+                                    (e) => setInputData({...inputData, email: e.target.value})}
                                 value={inputData.email}
                                 type="email"
                                 name="email"
                             />
+                            {errors.email && <p style={{color:"red"}}>{errors.email}</p>}
                         </div>
                         <div className="from-label-input">
                             <label>Пароль <span className="span">*</span>:</label>
                             <input
                                 onChange={
-                                    (e) => setInputData({ ...inputData, password: e.target.value })}
+                                    (e) => setInputData({...inputData, password: e.target.value})}
                                 value={inputData.password}
                                 type="password"
                             />
+                            {errors.password && <p style={{color:"red"}}>{errors.password }</p>}
                         </div>
                         <div className="from-label-input">
                             <label>Пароль снова <span className="span">*</span>:</label>
                             <input
                                 onChange={
-                                    (e) => setInputData({ ...inputData, password2: e.target.value })}
+                                    (e) => setInputData({...inputData, password2: e.target.value})}
                                 value={inputData.password2}
                                 type="password"
                                 name="password2"
