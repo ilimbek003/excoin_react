@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useState} from 'react';
 import "./header.css"
 import {NavLink} from 'react-router-dom'
@@ -253,3 +254,5 @@ const Header = ({children}) => {
 };
 
 export default Header;
+=======
+>>>>>>> 5c7a88b81202425c2f297dee78605a615438c08e
