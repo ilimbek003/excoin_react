@@ -36,7 +36,6 @@ const Reviews = () => {
               <input type="submit" value="Оставить отзыв" />
             </div>
           </div>
-
           <div className="oneotziv">
             <div className="oneotdata_two">
               <p className="oneotdata">15.02.2022, 15:22</p>
@@ -298,6 +297,7 @@ const Reviews = () => {
             </div>
           </div>
           <div className="oneot"></div>
+  
         </div>
       </Header>
     </div>
