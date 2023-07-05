@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import "./header.css"
 import {NavLink} from 'react-router-dom'
+import axios from "axios";
 
 
 const Header = ({children}) => {
@@ -19,6 +20,25 @@ const Header = ({children}) => {
         }
         setInMenuClicked(!inMenuClicked)
     }
+
+    const [inputData, setInputData] = useState(
+        {
+            "email": "",
+            "password": "",
+        }
+    )
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('https://excoin.onrender.com/account/login/', inputData)
+            .then((res) => {
+                console.log(res)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
 
     return (
         <div id="header">
@@ -106,15 +126,31 @@ const Header = ({children}) => {
                             <div className="black">
                                 <h1 className="black-authorization">Авторизация</h1>
                                 <form>
-                                    <input type="text"/>
-                                    <input type="password"/>
+                                    <input
+                                        value={inputData.email}
+                                        onChange={
+                                            (e) => setInputData({...inputData, email: e.target.value})}
+                                        type="text"
+                                        id="form_field_id-1-logmail"
+                                        name="logmail"/>
+                                    <input
+                                        onChange={
+                                            (e) => setInputData({...inputData, password: e.target.value})}
+                                        value={inputData.password}
+                                        type="password"
+                                    />
                                 </form>
                                 <div className="forgot-your-password">
                                     <a href="#">Забыли пароль?</a>
                                     <a href="#">Регистрация</a>
                                 </div>
                                 <div className="wlinesubmit-one">
-                                    <input type="submit" formTarget="_top" name="" value="Войти"/>
+                                    <input
+                                        onClick={handleSubmit}
+                                        type="submit"
+                                        formTarget="_top"
+                                        name="" value="Войти"
+                                    />
                                 </div>
                             </div>
                             <div className="widget">
@@ -206,7 +242,8 @@ const Header = ({children}) => {
                                             <div className="wdate">16</div>
                                         </div>
                                         <div>
-                                            <p className="widget_news_div_text">На базе первой в <br/> мире цифровой <br/> валюты
+                                            <p className="widget_news_div_text">На базе первой в <br/> мире
+                                                цифровой <br/> валюты
                                                 отрабатывались методы, варианты…</p>
                                         </div>
                                     </div>
@@ -220,7 +257,8 @@ const Header = ({children}) => {
                                             <div className="wdate">12</div>
                                         </div>
                                         <div>
-                                            <p className="widget_news_div_text">Добавили новые валюты zcash и риппл на сайт.</p>
+                                            <p className="widget_news_div_text">Добавили новые валюты zcash и риппл на
+                                                сайт.</p>
                                         </div>
                                     </div>
                                     <a className="widget_news_more" href="#">Подробнее</a>
