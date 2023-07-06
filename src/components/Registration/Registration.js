@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./registration.css"
 import Header from "../Header/Header";
 import axios from "axios"
-
+import {FaEye, FaEyeSlash} from "react-icons/fa"
 
 
 const Registration = () => {
@@ -16,45 +16,73 @@ const Registration = () => {
             "redirect_url": "https://excoin.in/lostpass /"
         }
     )
+    const [visible, setVisible] = useState(false)
+    const [visible2, setVisible2] = useState(false)
+
 
     const [errors, setErrors] = useState({})
 
     console.log(inputData)
-   function validation (inputData){
-        const errors ={}
+
+    function validation(inputData) {
+        const errors = {}
 
         const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
         const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
 
 
-        if (inputData.username === ""){
+        if (inputData.username === "") {
             errors.username = "Name is Required"
         }
-        if (inputData.email === ""){
+        if (inputData.email === "") {
             errors.email = "email is Required"
-        }
-        else if(!email_pattern.test(inputData.email)){
+        } else if (!email_pattern.test(inputData.email)) {
             errors.email = "Email did'nt match "
         }
-        if (inputData.password === ""){
+        if (inputData.password === "") {
             errors.password = "password is Required"
-        }else if(!password_pattern.test(inputData.password)){
-            errors.password = "password did'nt match"
+        } else if (!password_pattern.test(inputData.password)) {
+            errors.password = "password didn't match"
+        }
+        if  (inputData.password2 === inputData.password){
+            errors.password2 = "password not matched"
         }
         return errors
     }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setErrors(validation(inputData))
-        axios.post('https://excoin.onrender.com/account/register/', inputData)
-            .then((res) => {
-                console.log(res)
 
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+    {/*const handleSubmit = (e) => {*/}
+    {/*    e.preventDefault()*/}
+    //     setErrors(validation(inputData))
+    //     const validationErrors = validation(inputData);
+    //
+    //     axios.post('https://excoin.onrender.com/account/register/', inputData)
+    //         .then((res) => {
+    //             console.log(res)
+    //
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //         })
+    // }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formErrors = validation(inputData);
+
+        if (Object.keys(formErrors).length === 0) {
+            axios.post('https://excoin.onrender.com/account/register/', inputData)
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+            setErrors(formErrors);
+        }
+    };
+
+
     return (
         <>
             <Header>
@@ -128,7 +156,7 @@ const Registration = () => {
                                     (e) => setInputData({...inputData, username: e.target.value})}
                                 name="username"
                             />
-                            {errors.username && <p style={{color:"red"}}>{errors.username}</p>}
+                            {errors.username && <p style={{color: "red", marginLeft:"10px",marginBottom:"10px"}}>{errors.username}</p>}
                         </div>
                         <div className="from-label-input">
                             <label>E-mail <span className="span">*</span>:</label>
@@ -139,7 +167,9 @@ const Registration = () => {
                                 type="email"
                                 name="email"
                             />
-                            {errors.email && <p style={{color:"red"}}>{errors.email}</p>}
+                            {errors.email && <p style={{color: "red", marginLeft:"10px",marginBottom:"10px"}}>{errors.email}</p>}
+
+
                         </div>
                         <div className="from-label-input">
                             <label>Пароль <span className="span">*</span>:</label>
@@ -147,9 +177,12 @@ const Registration = () => {
                                 onChange={
                                     (e) => setInputData({...inputData, password: e.target.value})}
                                 value={inputData.password}
-                                type="password"
+                                type={visible ? "text" : "password"}
                             />
-                            {errors.password && <p style={{color:"red"}}>{errors.password }</p>}
+                            {errors.password && <p style={{color: "red", marginLeft:"10px",marginBottom:"10px"}}>{errors.password}</p>}
+                            <span className="span-icon" onClick={() => setVisible(!visible)}> {
+                                visible ? <FaEye/> : <FaEyeSlash/>
+                            } </span>
                         </div>
                         <div className="from-label-input">
                             <label>Пароль снова <span className="span">*</span>:</label>
@@ -157,9 +190,12 @@ const Registration = () => {
                                 onChange={
                                     (e) => setInputData({...inputData, password2: e.target.value})}
                                 value={inputData.password2}
-                                type="password"
+                                type={visible2 ? "text" : "password"}
                                 name="password2"
                             />
+                            <span className="span-icon" onClick={() => setVisible2(!visible2)}> {
+                                visible2  ? <FaEye/> : <FaEyeSlash/>
+                            } </span>
                         </div>
                         <div className="checkbox">
                             <input
