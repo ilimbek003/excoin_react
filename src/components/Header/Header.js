@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, {useState} from 'react';
 import "./header.css"
 import {NavLink} from 'react-router-dom'
@@ -94,9 +94,9 @@ const Header = ({children}) => {
                     </nav>
                 </div>
                 <div className={menu_class}>
-                    {/* <NavLink to="/registration">
+                   {/* {  <NavLink to="/registration">
                       <button className="btn-one">Регисрация</button>
-                    </NavLink> */}
+                    </NavLink> } */}
                 </div>
                 <div style={{display: "flex", justifyContent: 'space-between', marginTop: "40px"}}>
                     <div>
@@ -254,5 +254,5 @@ const Header = ({children}) => {
 };
 
 export default Header;
-=======
->>>>>>> 5c7a88b81202425c2f297dee78605a615438c08e
+
+

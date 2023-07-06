@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./reviews.css";
 import Home from "../Home/Home";
 import Header from "../Header/Header";
+import axios from "axios";
 
 const Reviews = () => {
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+
+  useEffect(() => {
+    fetchData();
+  }, [currentPage]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://api.example.com/endpoint", {
+        params: {
+          page: currentPage,
+          limit: 10,
+        },
+      });
+      setData(response.data.items);
+      setTotalPages(response.data.total_pages);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
   return (
     <div className="reivews">
       <Header>
@@ -277,7 +312,8 @@ const Reviews = () => {
 
             <div className="oneotzivright_one">
               <p className="oneotzivright_two-three">
-              Могу рекомендовать этот обменник. Оператор объяснил все и был <br /> постоянно на связи. Спасибо
+                Могу рекомендовать этот обменник. Оператор объяснил все и был{" "}
+                <br /> постоянно на связи. Спасибо
               </p>
             </div>
           </div>
@@ -290,14 +326,25 @@ const Reviews = () => {
 
             <div className="oneotzivright_one">
               <p className="oneotzivright_two-three">
-              Спасибо за быстрый обмен!
-
-
+                Спасибо за быстрый обмен!
               </p>
             </div>
           </div>
           <div className="oneot"></div>
-  
+          <div>
+            {data.map((item) => (
+              <div key={item.id}>{item.name}</div>
+            ))}{" "}
+            <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+              Previous
+            </button>
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </Header>
     </div>
@@ -305,3 +352,56 @@ const Reviews = () => {
 };
 
 export default Reviews;
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+
+// function PaginationExample() {
+//   const [data, setData] = useState([]);
+//   const [currentPage, setCurrentPage] = useState(1);
+//   const [totalPages, setTotalPages] = useState(0);
+
+//   useEffect(() => {
+//     fetchData();
+//   }, [currentPage]);
+
+//   const fetchData = async () => {
+//     try {
+//       const response = await axios.get('https://api.example.com/endpoint', {
+//         params: {
+//           page: currentPage,
+//           limit: 10
+//         }
+//       });
+//       setData(response.data.items);
+//       setTotalPages(response.data.total_pages);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+
+//   const handlePreviousPage = () => {
+//     if (currentPage > 1) {
+//       setCurrentPage(currentPage - 1);
+//     }
+//   };
+
+//   const handleNextPage = () => {
+//     if (currentPage < totalPages) {
+//       setCurrentPage(currentPage + 1);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <Header></Header>
+//       {data.map(item => (
+//         <div key={item.id}>{item.name}</div>
+//       ))}
+//       <button onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
+//       <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+//     </div>
+//   );
+// }
+
+// export default PaginationExample;
