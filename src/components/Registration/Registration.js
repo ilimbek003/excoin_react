@@ -13,24 +13,35 @@ const Registration = () => {
             "username": "",
             "password": "",
             "password2": "",
-            "redirect_url": "https://excoin.in/lostpass /"
+            "redirect_url": "https://excoin.in/lostpass/"
         }
     )
-    const [visible, setVisible] = useState(false)
-    const [visible2, setVisible2] = useState(false)
+    const [visible, setVisible] = useState(false);
+    const [visible2, setVisible2] = useState(false);
+    const [errors, setErrors] = useState({});
+    const [checkboxChecked, setCheckboxChecked] = useState(false);
 
-
-    const [errors, setErrors] = useState({})
 
     console.log(inputData)
 
+    useEffect(() => {
+        const savedValue = localStorage.getItem('checkboxChecked');
+        if (savedValue) {
+            setCheckboxChecked(JSON.parse(savedValue));
+        }
+    }, []);
+    useEffect(() => {
+        localStorage.setItem('checkboxChecked', checkboxChecked);
+    }, [checkboxChecked]);
+    const handleCheckboxChange = (event) => {
+        setCheckboxChecked(event.target.checked);
+    };
+
     function validation(inputData) {
         const errors = {}
-
         const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
         const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
-
-
+        const input_checkbox = false
         if (inputData.username === "") {
             errors.username = "Name is Required"
         }
@@ -44,43 +55,49 @@ const Registration = () => {
         } else if (!password_pattern.test(inputData.password)) {
             errors.password = "password didn't match"
         }
-        if  (inputData.password2 === inputData.password){
+        if (inputData.password2 !== inputData.password) {
             errors.password2 = "password not matched"
         }
         return errors
     }
 
-    {/*const handleSubmit = (e) => {*/}
-    {/*    e.preventDefault()*/}
-    //     setErrors(validation(inputData))
-    //     const validationErrors = validation(inputData);
-    //
-    //     axios.post('https://excoin.onrender.com/account/register/', inputData)
-    //         .then((res) => {
-    //             console.log(res)
-    //
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formErrors = validation(inputData);
+        const validationErrors = validation(inputData);
 
-        if (Object.keys(formErrors).length === 0) {
-            axios.post('https://excoin.onrender.com/account/register/', inputData)
-                .then((res) => {
-                    console.log(res);
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+        if (Object.keys(validationErrors).length === 0) {
+            const emptyFields = Object.keys(inputData).filter(key => inputData[key] === '');
+
+            if (emptyFields.length === 0) {
+                setErrors({});
+                axios
+                    .post('https://excoin.onrender.com/account/register/', inputData)
+                    .then((res) => {
+                        console.log(res);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            } else {
+                const newErrors = {};
+                if (emptyFields && emptyFields.length > 0) {
+                    emptyFields.forEach((field) => {
+                        newErrors[field] = `${field} is required`;
+                    });
+                }
+                setErrors(newErrors);
+            }
         } else {
-            setErrors(formErrors);
+            setErrors(validationErrors);
         }
     };
+
+    const isUsernameEmpty = inputData.username === '';
+    const isEmailEmpty = inputData.email === '';
+    const isPasswordEmpty = inputData.password === '' ;
+    const isSubmitDisabled = isUsernameEmpty || isEmailEmpty || isPasswordEmpty;
 
 
     return (
@@ -156,7 +173,11 @@ const Registration = () => {
                                     (e) => setInputData({...inputData, username: e.target.value})}
                                 name="username"
                             />
-                            {errors.username && <p style={{color: "red", marginLeft:"10px",marginBottom:"10px"}}>{errors.username}</p>}
+                            {errors.username && <p style={{
+                                color: "red",
+                                marginLeft: "10px",
+                                marginBottom: "10px"
+                            }}>{errors.username}</p>}
                         </div>
                         <div className="from-label-input">
                             <label>E-mail <span className="span">*</span>:</label>
@@ -167,7 +188,8 @@ const Registration = () => {
                                 type="email"
                                 name="email"
                             />
-                            {errors.email && <p style={{color: "red", marginLeft:"10px",marginBottom:"10px"}}>{errors.email}</p>}
+                            {errors.email &&
+                                <p style={{color: "red", marginLeft: "10px", marginBottom: "10px"}}>{errors.email}</p>}
 
 
                         </div>
@@ -179,7 +201,11 @@ const Registration = () => {
                                 value={inputData.password}
                                 type={visible ? "text" : "password"}
                             />
-                            {errors.password && <p style={{color: "red", marginLeft:"10px",marginBottom:"10px"}}>{errors.password}</p>}
+                            {errors.password && <p style={{
+                                color: "red",
+                                marginLeft: "10px",
+                                marginBottom: "10px"
+                            }}>{errors.password}</p>}
                             <span className="span-icon" onClick={() => setVisible(!visible)}> {
                                 visible ? <FaEye/> : <FaEyeSlash/>
                             } </span>
@@ -193,13 +219,20 @@ const Registration = () => {
                                 type={visible2 ? "text" : "password"}
                                 name="password2"
                             />
+                            {errors.password2 && <p style={{
+                                color: "red",
+                                marginLeft: "10px",
+                                marginBottom: "10px"
+                            }}>{errors.password2}</p>}
                             <span className="span-icon" onClick={() => setVisible2(!visible2)}> {
-                                visible2  ? <FaEye/> : <FaEyeSlash/>
+                                visible2 ? <FaEye/> : <FaEyeSlash/>
                             } </span>
                         </div>
                         <div className="checkbox">
                             <input
                                 type="checkbox"
+                                checked={checkboxChecked}
+                                onChange={handleCheckboxChange}
                             />
                             <span className="checkbox-span1">С</span>
                             <a className="checkbox-text" href="https://excoin.in/tos/">правилами сервиса</a>
@@ -207,6 +240,7 @@ const Registration = () => {
                         </div>
                         <div className="all-submit">
                             <input
+                                disabled={isSubmitDisabled}
                                 onClick={handleSubmit}
                                 type="submit" formTarget="_top" name="submit" className="reg_submit-two"
                                 value="Регистрация"/>
