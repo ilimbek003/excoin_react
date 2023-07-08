@@ -3,7 +3,7 @@ import "./registration.css"
 import Header from "../Header/Header";
 import axios from "axios"
 import {FaEye, FaEyeSlash} from "react-icons/fa"
-
+import Verify from "./Verify";
 
 const Registration = () => {
 
@@ -19,23 +19,30 @@ const Registration = () => {
     const [visible, setVisible] = useState(false);
     const [visible2, setVisible2] = useState(false);
     const [errors, setErrors] = useState({});
-    const [checkboxChecked, setCheckboxChecked] = useState(false);
+    const [check, setCheck] = useState(false)
+    const [checkboxChecked, setCheckboxChecked] = useState({
+        checked: check,
+        data: inputData
+    });
 
+    if (check){
+        localStorage.setItem('data', JSON.stringify((inputData)))
+    }
 
     console.log(inputData)
 
-    useEffect(() => {
-        const savedValue = localStorage.getItem('checkboxChecked');
-        if (savedValue) {
-            setCheckboxChecked(JSON.parse(savedValue));
-        }
-    }, []);
-    useEffect(() => {
-        localStorage.setItem('checkboxChecked', checkboxChecked);
-    }, [checkboxChecked]);
-    const handleCheckboxChange = (event) => {
-        setCheckboxChecked(event.target.checked);
-    };
+    // useEffect(() => {
+    //     const savedValue = localStorage.getItem('checkboxChecked');
+    //     if (savedValue) {
+    //         setCheckboxChecked(JSON.parse(savedValue));
+    //     }
+    // }, []);
+    // useEffect(() => {
+    //     localStorage.setItem('checkboxChecked', checkboxChecked);
+    // }, [checkboxChecked]);
+    // const handleCheckboxChange = (event) => {
+    //     setCheckboxChecked(event.target.checked);
+    // };
 
     function validation(inputData) {
         const errors = {}
@@ -93,6 +100,10 @@ const Registration = () => {
             setErrors(validationErrors);
         }
     };
+
+    const handleCheck = () => {
+        setCheck(true)
+    }
 
     const isUsernameEmpty = inputData.username === '';
     const isEmailEmpty = inputData.email === '';
@@ -232,7 +243,7 @@ const Registration = () => {
                             <input
                                 type="checkbox"
                                 checked={checkboxChecked}
-                                onChange={handleCheckboxChange}
+                              onChange={handleCheck}
                             />
                             <span className="checkbox-span1">С</span>
                             <a className="checkbox-text" href="https://excoin.in/tos/">правилами сервиса</a>
@@ -249,6 +260,7 @@ const Registration = () => {
                         </div>
                     </form>
                 </div>
+                <Verify/>
             </Header>
         </>
     )
@@ -256,3 +268,5 @@ const Registration = () => {
 };
 
 export default Registration;
+
+
