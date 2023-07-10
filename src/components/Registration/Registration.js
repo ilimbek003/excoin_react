@@ -187,6 +187,7 @@ const Registration = () => {
                             <label>E-mail <span className="span">*</span>:</label>
                             <input
                                 onChange={
+
                                     (e) => setInputData({...inputData, email: e.target.value})}
                                 value={inputData.email}
                                 type="email"
