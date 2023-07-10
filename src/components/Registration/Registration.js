@@ -24,31 +24,20 @@ const Registration = () => {
         checked: check,
         data: inputData
     });
-
-    if (check){
+    const [registrationError, setRegistrationError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    if (check) {
         localStorage.setItem('data', JSON.stringify((inputData)))
     }
 
     console.log(inputData)
 
-    // useEffect(() => {
-    //     const savedValue = localStorage.getItem('checkboxChecked');
-    //     if (savedValue) {
-    //         setCheckboxChecked(JSON.parse(savedValue));
-    //     }
-    // }, []);
-    // useEffect(() => {
-    //     localStorage.setItem('checkboxChecked', checkboxChecked);
-    // }, [checkboxChecked]);
-    // const handleCheckboxChange = (event) => {
-    //     setCheckboxChecked(event.target.checked);
-    // };
+
 
     function validation(inputData) {
         const errors = {}
         const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
         const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
-        const input_checkbox = false
         if (inputData.username === "") {
             errors.username = "Name is Required"
         }
@@ -69,24 +58,28 @@ const Registration = () => {
     }
 
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = validation(inputData);
 
         if (Object.keys(validationErrors).length === 0) {
-            const emptyFields = Object.keys(inputData).filter(key => inputData[key] === '');
+            const emptyFields = Object.keys(inputData).filter((key) => inputData[key] === '');
 
             if (emptyFields.length === 0) {
                 setErrors({});
+                setIsLoading(true);
+
                 axios
                     .post('https://excoin.onrender.com/account/register/', inputData)
                     .then((res) => {
                         console.log(res);
+                        setIsLoading(false);
                     })
                     .catch((err) => {
                         console.log(err);
+                        setIsLoading(false);
                     });
+
             } else {
                 const newErrors = {};
                 if (emptyFields && emptyFields.length > 0) {
@@ -107,7 +100,7 @@ const Registration = () => {
 
     const isUsernameEmpty = inputData.username === '';
     const isEmailEmpty = inputData.email === '';
-    const isPasswordEmpty = inputData.password === '' ;
+    const isPasswordEmpty = inputData.password === '';
     const isSubmitDisabled = isUsernameEmpty || isEmailEmpty || isPasswordEmpty;
 
 
@@ -194,6 +187,7 @@ const Registration = () => {
                             <label>E-mail <span className="span">*</span>:</label>
                             <input
                                 onChange={
+
                                     (e) => setInputData({...inputData, email: e.target.value})}
                                 value={inputData.email}
                                 type="email"
@@ -243,7 +237,7 @@ const Registration = () => {
                             <input
                                 type="checkbox"
                                 checked={checkboxChecked}
-                              onChange={handleCheck}
+                                onChange={handleCheck}
                             />
                             <span className="checkbox-span1">С</span>
                             <a className="checkbox-text" href="https://excoin.in/tos/">правилами сервиса</a>
@@ -260,13 +254,13 @@ const Registration = () => {
                         </div>
                     </form>
                 </div>
+                {isLoading && <div>Loading...</div>}
                 <Verify/>
             </Header>
         </>
     )
-        ;
 };
 
-export default Registration;
 
+export default Registration;
 
