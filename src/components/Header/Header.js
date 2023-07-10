@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 4103ac87c10756ce7da206905c27b2e141a4fcd9
 import React, {useState} from 'react';
 import "./header.css"
 import {NavLink} from 'react-router-dom'
@@ -256,12 +252,8 @@ const Header = ({children}) => {
     );
 };
 
-<<<<<<< HEAD
-export default Header;
-=======
 export default Header;
 
 
 
 
->>>>>>> 4103ac87c10756ce7da206905c27b2e141a4fcd9
