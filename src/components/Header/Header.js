@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 4103ac87c10756ce7da206905c27b2e141a4fcd9
 import React, {useState} from 'react';
 import "./header.css"
 import {NavLink} from 'react-router-dom'
@@ -140,15 +137,15 @@ const Header = ({children}) => {
                                         подводили. Так…</p>
                                     <div className="widget_line"/>
                                 </div>
-                                <div>
+                                 <div>
                                     <div className="flex">
                                         <h4 className="widget_reviews_author">Дима,</h4>
                                         <h6 className="widget_reviews_date">11.02.2022, 14:23</h6>
                                     </div>
-                                    <p className="widget_reviews_content">Спасибо за обмен и хорошую ставку Долго ждать
-                                        подтверждений пришлось…</p>
+                                     <p className="widget_reviews_content">Спасибо за обмен и хорошую ставку Долго ждать
+                                        подтверждений пришлось…</p> 
                                     <div className="widget_line"/>
-                                </div>
+                                </div> 
                                 <div>
                                     <div className="flex">
                                         <h4 className="widget_reviews_author">Галина,</h4>
@@ -256,12 +253,7 @@ const Header = ({children}) => {
     );
 };
 
-<<<<<<< HEAD
-export default Header;
-=======
 export default Header;
 
 
 
-
->>>>>>> 4103ac87c10756ce7da206905c27b2e141a4fcd9
