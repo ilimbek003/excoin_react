@@ -22,16 +22,12 @@ const Reviews = () => {
       const res = await axios.get(
         `https://excoin.onrender.com/review/?page=${currentPage}`
       );
-      setData(res.data.results);
+      setData(res.data);
       setCount(res.data.count);
       setTotalPages(res.data.total_pages);
     };
     getData();
   }, [currentPage]);
-
-  console.log(count);
-  console.log(Math.ceil(count / 20));
-
   const goToPreviousPage = () => {
     setCurrentPage((totalPages) => totalPages - 1);
   };

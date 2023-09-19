@@ -10,10 +10,10 @@ const Registration = () => {
     const [inputData, setInputData] = useState(
         {
             "email": "",
-            "username": "",
+            "first_name": "",
+            "last_name": "",
             "password": "",
-            "password2": "",
-            "redirect_url": "https://excoin.in/lostpass/"
+            "confirm_password": ""
         }
     )
     const [visible, setVisible] = useState(false);
@@ -24,23 +24,19 @@ const Registration = () => {
         checked: check,
         data: inputData
     });
-    const [registrationError, setRegistrationError] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
     if (check) {
         localStorage.setItem('data', JSON.stringify((inputData)))
     }
-
+    const handleCheck = () => {
+        setCheck(true)
+    }
+    const [registrationError, setRegistrationError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     console.log(inputData)
-
-
-
     function validation(inputData) {
         const errors = {}
-        const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
+            const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
         const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
-        if (inputData.username === "") {
-            errors.username = "Name is Required"
-        }
         if (inputData.email === "") {
             errors.email = "email is Required"
         } else if (!email_pattern.test(inputData.email)) {
@@ -51,8 +47,8 @@ const Registration = () => {
         } else if (!password_pattern.test(inputData.password)) {
             errors.password = "password didn't match"
         }
-        if (inputData.password2 !== inputData.password) {
-            errors.password2 = "password not matched"
+        if (inputData.confirm_password !== inputData.password) {
+            errors.confirm_password = "password not matched"
         }
         return errors
     }
@@ -70,12 +66,13 @@ const Registration = () => {
                 setIsLoading(true);
 
                 axios
-                    .post('https://excoin.onrender.com/account/register/', inputData)
+                    .post('http://77.232.128.174:8000/auth/register', inputData)
                     .then((res) => {
                         console.log(res);
                         setIsLoading(false);
                     })
                     .catch((err) => {
+
                         console.log(err);
                         setIsLoading(false);
                     });
@@ -94,9 +91,7 @@ const Registration = () => {
         }
     };
 
-    const handleCheck = () => {
-        setCheck(true)
-    }
+
 
     const isUsernameEmpty = inputData.username === '';
     const isEmailEmpty = inputData.email === '';
@@ -172,16 +167,24 @@ const Registration = () => {
                             <input
 
                                 type="text"
-                                value={inputData.username}
-                                onChange={
-                                    (e) => setInputData({...inputData, username: e.target.value})}
-                                name="username"
+                                value={inputData.first_name}
+                                onChange={(e) => setInputData({...inputData, first_name: e.target.value})}
+                                name="first_name"
                             />
                             {errors.username && <p style={{
                                 color: "red",
                                 marginLeft: "10px",
                                 marginBottom: "10px"
                             }}>{errors.username}</p>}
+                        </div>
+                        <div className="from-label-input">
+                            <label>имя <span className="span">*</span>:</label>
+                            <input
+                                type="text"
+                                value={inputData.last_name}
+                                onChange={(e) => setInputData({...inputData, last_name: e.target.value})}
+                                name="last_name"
+                            />
                         </div>
                         <div className="from-label-input">
                             <label>E-mail <span className="span">*</span>:</label>
@@ -219,16 +222,16 @@ const Registration = () => {
                             <label>Пароль снова <span className="span">*</span>:</label>
                             <input
                                 onChange={
-                                    (e) => setInputData({...inputData, password2: e.target.value})}
-                                value={inputData.password2}
+                                    (e) => setInputData({...inputData, confirm_password: e.target.value})}
+                                value={inputData.confirm_password}
                                 type={visible2 ? "text" : "password"}
                                 name="password2"
                             />
-                            {errors.password2 && <p style={{
+                            {errors.confirm_password && <p style={{
                                 color: "red",
                                 marginLeft: "10px",
                                 marginBottom: "10px"
-                            }}>{errors.password2}</p>}
+                            }}>{errors.confirm_password}</p>}
                             <span className="span-icon" onClick={() => setVisible2(!visible2)}> {
                                 visible2 ? <FaEye/> : <FaEyeSlash/>
                             } </span>
@@ -245,8 +248,7 @@ const Registration = () => {
                         </div>
                         <div className="all-submit">
                             <input
-                                disabled={isSubmitDisabled}
-                                onClick={handleSubmit}
+                                onSubmit={handleSubmit}
                                 type="submit" formTarget="_top" name="submit" className="reg_submit-two"
                                 value="Регистрация"/>
 
