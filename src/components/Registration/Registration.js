@@ -70,6 +70,7 @@ const Registration = () => {
                     .then((res) => {
                         console.log(res);
                         setIsLoading(false);
+
                     })
                     .catch((err) => {
                         console.log(err);
