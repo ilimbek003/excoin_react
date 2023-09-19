@@ -69,7 +69,6 @@ const Registration = () => {
                     .post('http://77.232.128.174:8000/auth/register', inputData)
                     .then((res) => {
                         console.log(res);
-
                         setIsLoading(false);
                     })
                     .catch((err) => {
